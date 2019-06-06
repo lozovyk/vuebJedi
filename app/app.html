@@ -6,11 +6,30 @@
 				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
+
+	<script src="../node_modules/vue/dist/vue.js"></script>
 </head>
 <body>
 
-
-
-<script src="../node_modules/vue/dist/vue.js"></script>
+<div id="app" :title="title">
+	<template v-if="status == 1">
+		<h1>Тру</h1>
+		<p>100</p>
+	</template>
+	<template v-else-if="status == 2">
+		<h1>Тру</h1>
+		<p>140</p>
+	</template>
+</div>
+<script>
+	var app = new Vue({
+		el: '#app',
+		data: {
+			message: 'Привет, Vue!',
+			title: 'Будет алертик',
+			status: 2
+		}
+	})
+</script>
 </body>
 </html>
